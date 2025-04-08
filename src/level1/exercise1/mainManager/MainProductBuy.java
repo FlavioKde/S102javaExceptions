@@ -16,7 +16,7 @@ public class MainProductBuy {
 
             System.out.println("The total price is " + total);
         }catch (EmptySaleException e){
-            System.out.println("Error " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }finally {
             System.out.println("Thank you for using the app");
         }

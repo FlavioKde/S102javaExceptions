@@ -15,10 +15,6 @@ public class ProductBuy {
         this.totalPrice = 0.0;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
     public double calculateTotal(double totalPrice) throws EmptySaleException {
 
         if (products.isEmpty()) {

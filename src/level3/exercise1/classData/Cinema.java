@@ -1,6 +1,7 @@
 package level3.exercise1.classData;
 
 import level3.exercise1.logic.ManagementCinema;
+import level3.exercise1.logic.ManagementMenuCinema;
 import level3.exercise1.logic.ManagementRow;
 
 import java.util.Scanner;
@@ -10,11 +11,12 @@ public class Cinema {
     private int seatPerRow;
     private ManagementRow managementRow;
     private ManagementCinema managementCinema;
-
+    private ManagementMenuCinema managementMenuCinema;
 
     public Cinema() {
         this.managementRow = new ManagementRow();
         this.managementCinema = new ManagementCinema(this, managementRow);
+        this.managementMenuCinema = new ManagementMenuCinema(managementCinema);
         requestInitialData();
         loadCinema();
 
@@ -59,7 +61,8 @@ public class Cinema {
 
     public void loadCinema() {
 
-        managementCinema.menu();
+        //managementCinema.menu();
+        managementMenuCinema.displayMenu();
 
     }
 }

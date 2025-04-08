@@ -17,74 +17,6 @@ public class ManagementCinema {
         this.cinema = cinema;
         this.managementRow = managementRow;
 
-
-
-    }
-
-
-    public void menu() {
-        Scanner scanner1 = new Scanner(System.in);
-
-
-        if (scanner1.hasNextLine()) {
-            scanner1.nextLine();
-        } else {
-            System.out.println("No initial entry found. Please check.");
-            return;
-        }
-
-
-        boolean exit = false;
-
-        do{
-            System.out.println("-----Cinema Manager-----");
-            System.out.println("-------------------------");
-            System.out.println("---------Options---------");
-            System.out.println("1-Show all reserved seats");
-            System.out.println("2-Show the seats reserved for one person");
-            System.out.println("3-Reserve a seat");
-            System.out.println("4-Cancel the reservation of a seat");
-            System.out.println("5-Cancel all reservations of a person");
-            System.out.println("0-Exit");
-            System.out.println("-------------------------");
-
-            System.out.println("Selection one option");
-            int numberSelected = scanner1.nextInt();
-            scanner1.nextLine();
-
-            switch (numberSelected) {
-                case 1: {
-                    showSeats();
-                    break;
-                }
-                case 2: {
-                    showSetPerson(scanner1);
-                    break;
-                }
-                case 3: {
-                    reserverSeats(scanner1);
-                    break;
-                }
-                case 4: {
-                    cancelReservation(scanner1);
-                    break;
-                }
-                case 5: {
-                    cancelReservationPerson(scanner1);
-                    break;
-                }
-                case 0: {
-                    System.out.println("Leaving......");
-                    exit = true;
-                    break;
-
-                }
-            }
-
-
-        } while (!exit);
-
-        scanner1.close();
     }
 
 
@@ -108,7 +40,7 @@ public class ManagementCinema {
         for (Seat seat: managementRow.getSeatCinemas()){
             if (seat.getName().equalsIgnoreCase(name)){
 
-                System.out.println(seat.toString());
+                System.out.println(seat);
             reservFound = true;
         }
 
@@ -117,7 +49,7 @@ public class ManagementCinema {
             System.out.println("No reservations found for: " + name);
         }
 
-        return ("Seats reserved by " + name + toString() );
+        return ("Seats reserved by " + name );
     }
 
 

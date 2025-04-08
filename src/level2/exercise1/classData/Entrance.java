@@ -125,17 +125,17 @@ public class Entrance {
 
     public static String readString(String message, Scanner scanner) {
 
-        String genericError;
+        String read;
         while (true) {
 
             try {
                 System.out.println(message);
-                genericError = scanner.next();
+                read = scanner.next();
                 scanner.nextLine();
 
 
-                if(genericError.matches("[a-zA-Z]+") ){
-                    System.out.println("The input es correct " + genericError);
+                if(read.matches("[a-zA-Z]+") ){
+                    System.out.println("The input es correct " + read);
                     break;
                 } else {
                     throw new ReadStringException("Invalid input, please enter a valid input, string ");
@@ -147,7 +147,7 @@ public class Entrance {
 
             }
         }
-        return genericError;
+        return read;
     }
 
     public static boolean readYesNo(String message, Scanner scanner) {
